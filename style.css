@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-img{
+.content .image img{
     width: 100%;
     display: flex;
 }
@@ -32,7 +32,7 @@ nav{
     gap: 2rem;
 }
 
-.nav-logo{
+.nav-logo img{
     max-width: 100px;
 }
 
@@ -41,6 +41,14 @@ nav{
     display: flex;
     align-items: center;
     gap: 3rem;
+}
+
+
+#menu-icon{
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
 }
 
 .link a{
@@ -71,7 +79,7 @@ nav{
     background-color: #27272a;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
 .btn:hover{
@@ -142,6 +150,9 @@ section .header {
 }
 
 /* Our Profile Start */
+section #content .container{
+    background-color: #323232;
+}
 .features{
     margin-top: 4rem;
     display: grid;
@@ -167,6 +178,8 @@ section .header {
 
 .features .card img{
     border-radius: 300px;
+    width: 100%;
+    display: flex;
 }
 
 .features .card h4{
@@ -232,8 +245,8 @@ section .header {
     border-radius: 15px;
     transition: all 0.3s ease;
     box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
--webkit-box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
--moz-box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 15px -4px rgba(0,0,0,1);
 }
 
 .pricing .card:hover{
@@ -244,6 +257,11 @@ section .header {
 .pricing .card .content{
     flex: 1;
     margin-bottom: 2rem;
+}
+
+.pricing .card .content img{
+    width: 100%;
+    display: flex;
 }
 
 .pricing .card h4{
@@ -294,6 +312,11 @@ footer{
 footer .column .logo{
     max-width: 100px;
     margin-bottom: 2rem;
+}
+   
+footer .column .logo img{
+    width: 100%;
+    display: flex;
 }
 
 footer .column p{
@@ -367,6 +390,49 @@ footer .column > a:hover{
     }
     footer{
         grid-template-columns: 1fr 200px;
+    }
+    #menu-icon{
+        display: inline-flex;
+        padding-left: 10px;
+    }
+    .menu-bar{
+        display: inline-flex;
+        align-items: center;
+    }
+    .nav-links{
+        position: absolute;
+        top: 19%;
+        right: -100%;
+        width: 250px;
+        height: 33vh;
+        background-color: #323232;
+        z-index: 100;
+        display: none;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+        gap: 0;
+    }
+    .nav-links a{
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+        color: #fff;
+    }
+    .nav-links a:after{
+        background-color: #fff;
+    }
+    .nav-links a:hover:after{
+        width: 100%;
+        
+    }
+    nav{
+        justify-content: space-between;
+    }
+    .nav-links.open{
+        right: 2%;
+        display: grid;
     }
 }
 
