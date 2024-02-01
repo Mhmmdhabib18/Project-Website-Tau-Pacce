@@ -23,13 +23,15 @@ body{
 }
 
 nav{
-    max-width: 1200px;
+    width: 1750px;
+    max-width: 90%;
     margin: auto;
-    padding: 2rem 1rem;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    position: relative;
+    z-index: 100;
+    padding-top: 27px;
 }
 
 .nav-logo img{
@@ -40,7 +42,8 @@ nav{
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 6rem;
+    margin: auto;
 }
 
 
@@ -86,6 +89,161 @@ nav{
     background-color: rgb(82, 82, 82);
 }
 
+
+/* css slider */
+.slider{
+    height: 105vh;
+    margin-top: -125px;
+    position: relative;
+}
+
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #fff 20%, transparent
+    );
+}
+
+.slider .list .item .content1{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+    color: black;
+}
+
+.slider .list .item .content1 p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content1 h2{
+    font-size: 70px;
+    margin: 0;
+}
+
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent1 {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent1 .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.arrows{
+    position: absolute;
+    top: 40%;
+    right: 90px;
+    z-index: 100;
+    left: 1030px;
+}
+
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: 'Poppins';
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    z-index: 100;
+    transition: .5s;
+}
+
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+
+.thumbnail .item{
+   width: 150px;
+   height: 220px;
+   filter: brightness(.5);
+   transform: .5s; 
+   flex-shrink: 0;
+
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .item.active{
+    filter: brightness(1);
+}
+
+.thumbnail .item .content1{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+
+/* Slider Finish */
 .container{
     max-width: 1200px;
     margin: auto;
@@ -379,8 +537,9 @@ footer .column > a:hover{
     header{
         grid-template-columns: repeat(1, 1fr);
     }
-    header .image{
+    header .image img{
         grid-area: 1/1/2/2;
+        max-width: 250px;
     }
     .features{
         grid-template-columns: repeat(2, 1fr);
@@ -401,10 +560,10 @@ footer .column > a:hover{
     }
     .nav-links{
         position: absolute;
-        top: 19%;
+        top: 90%;
         right: -100%;
         width: 250px;
-        height: 33vh;
+        height: 34vh;
         background-color: #323232;
         z-index: 100;
         display: none;
@@ -419,6 +578,7 @@ footer .column > a:hover{
         padding: 0px 25px;
         transition: all .50s ease;
         color: #fff;
+        z-index: 1000;
     }
     .nav-links a:after{
         background-color: #fff;
@@ -433,11 +593,21 @@ footer .column > a:hover{
     .nav-links.open{
         right: 2%;
         display: grid;
+        z-index: 1000;
+    }
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
     }
 }
 
 @media (width < 600px){
-    header .image::before{
+    .content .image img::before{
         display: none;
     }
     .features{
@@ -448,5 +618,8 @@ footer .column > a:hover{
     }
     footer{
         grid-template-columns: 1fr 150px;
+    }
+    .copyright{
+        padding:5px;
     }
 }
