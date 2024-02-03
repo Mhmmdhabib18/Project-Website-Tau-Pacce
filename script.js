@@ -1,3 +1,9 @@
+// effect navbar
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  nav.classList.toggle("sticky", window.scrollY > 0);
+});
+
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".nav-links");
 

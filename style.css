@@ -11,11 +11,12 @@
 .container .image img{
     width: 100%;
     display: flex;
-    border-radius: 100px;
+    border-radius: 300px;
 }
 
 a{
     text-decoration: none;
+    color: #fff;
 }
 
 body{
@@ -33,6 +34,10 @@ nav{
     position: relative;
     z-index: 100;
     padding-top: 27px;
+}
+
+nav .sticky{
+    padding: 40px 100px;
 }
 
 .nav-logo img{
@@ -300,15 +305,25 @@ header .image img{
     margin: auto;
 }
 
-section .header {
-    margin-bottom: 1rem;
-    color: #27272a;
+/* Our Profile Start */
+
+section .text-profile {
+    margin-top: 4rem;
+    color: #fff;
     text-align: center;
     font-size: 2.25rem;
     font-weight: 600;
+    padding-top: 50px;
 }
 
-/* Our Profile Start */
+#content{
+    background-color: #27272a;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+}
+
+
 section #content .container{
     background-color: #323232;
 }
@@ -317,6 +332,9 @@ section #content .container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    background-color: #27272a;
+    margin: auto;
+    padding: 4rem 2rem;
 }
 
 .features .card{
@@ -344,7 +362,7 @@ section #content .container{
 .features .card h4{
     margin-bottom: 0rem;
     color: #27272a;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -379,6 +397,14 @@ section #content .container{
 /* Our Profile Finish */
 
 /* News Start */
+
+.container .header{
+    color: #27272a;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
 
 
 .sub-header{
@@ -466,6 +492,12 @@ footer{
     display: grid;
     grid-template-columns: 400px repeat(3, 1fr);
     gap: 2rem;
+    margin: auto;
+    padding: 5rem 2rem;
+    background-color: #27272a;
+    box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.75);
 }
 
 footer .column .logo{
@@ -479,7 +511,7 @@ footer .column .logo img{
 }
 
 footer .column p{
-    color: #27272a;
+    color: rgb(196, 195, 195);
     margin-bottom: 2rem;
 }
 
@@ -490,7 +522,7 @@ footer .column .socials{
 }
 
 footer .column .socials a{
-    color: #323232;
+    color: #fff;
     border: 1px solid #323232;
     padding: 5px 10px;
     font-size: 1.25rem;
@@ -505,7 +537,7 @@ footer .column .socials a:hover{
 }
 
 footer .column h4{
-    color: #323232;
+    color: #fff;
     margin-bottom: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
@@ -513,7 +545,7 @@ footer .column h4{
 
 footer .column > a{
     display: block;
-    color: gray;
+    color: rgb(228, 228, 228);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
 }
@@ -523,10 +555,10 @@ footer .column > a:hover{
 }
 
 .copyright{
-    max-width: 1200px;
     margin: auto;
     padding: 1rem;
-    color: #323232;
+    color: #fff;
+    background-color: #27272a;
     font-size: 0.8rem;
     text-align: center;
 }
@@ -619,7 +651,7 @@ footer .column > a:hover{
         grid-template-columns: repeat(1, 1fr);
     }
     footer{
-        grid-template-columns: 1fr 150px;
+        grid-template-columns: 1fr 80px;
     }
     .copyright{
         padding:5px;
