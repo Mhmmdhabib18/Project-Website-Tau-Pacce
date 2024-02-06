@@ -26,18 +26,23 @@ body{
 
 nav{
     width: 1750px;
-    max-width: 90%;
-    margin: auto;
+    max-width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 100;
+    position: fixed;
+    z-index: 1000;
     padding-top: 27px;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: 0.6s;
 }
 
-nav .sticky{
-    padding: 40px 100px;
+.sticky {
+    background-color: #fff;
+    padding-top: 1px;
 }
 
 .nav-logo img{
@@ -99,7 +104,7 @@ nav .sticky{
 /* css slider */
 .slider{
     height: 105vh;
-    margin-top: -125px;
+    
     position: relative;
 }
 
@@ -539,6 +544,7 @@ footer .column .socials a:hover{
 footer .column h4{
     color: #fff;
     margin-bottom: 2rem;
+    margin-top: 4rem;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -622,6 +628,7 @@ footer .column > a:hover{
     }
     nav{
         justify-content: space-between;
+        position: fixed;
     }
     .nav-links.open{
         right: 2%;
@@ -641,6 +648,10 @@ footer .column > a:hover{
 }
 
 @media (width < 600px){
+    nav{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .content .image img::before{
         display: none;
     }
@@ -652,9 +663,6 @@ footer .column > a:hover{
     }
     footer{
         grid-template-columns: 1fr 80px;
-    }
-    .copyright{
-        padding:5px;
     }
     .arrows{
         top: 516px;

@@ -4,6 +4,7 @@ window.addEventListener("scroll", function () {
   nav.classList.toggle("sticky", window.scrollY > 0);
 });
 
+// Responsive Navbar
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".nav-links");
 
